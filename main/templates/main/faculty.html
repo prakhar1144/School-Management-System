@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+{% block content %}
+	
+	<p style="text-align: center;">Teachers</p>
+	<form class="form-inline my-2 my-lg-0">
+	    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+	    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	</form>
+	<div style="box-shadow: 0 0 10px grey; border-radius: 10px;">
+	<ol>
+	{% for i in object_list %}
+	   	<li><a href="{% url 'faculty_detail' pk=i.pk %}">{{i}}</a></li>
+	{% endfor %}
+	</ol>
+	</div>
+{% endblock %}

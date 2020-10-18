@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+{% block content %}
+	<p style="text-align: center;">Details</p>
+	<div class='card'>
+		<h5 class="card-header" style="text-align: center;">{{faculty_name.Name}}</h5>
+		<ul class="list-group list-group-flush">
+		    <li class="list-group-item">Subject : {{faculty_name.Subject}}</li>
+		    <li class="list-group-item">Contact : {{faculty_name.Contact}}</li>
+		    <li class="list-group-item">Email : {{faculty_name.Email}}</li>
+  		</ul>
+		
+	</div>
+{% endblock %}
