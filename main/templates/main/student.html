@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+	<p style="text-align: center;">Students</p>
+	<form class="form-inline my-2 my-lg-0">
+	    <input class="form-control mr-sm-2" type="search" placeholder="Search by Name" aria-label="Search">
+	    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	</form>
+<!-- Example single danger button -->
+	<div class="btn-group">
+	  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    Class
+	  </button>
+	  <div class="dropdown-menu">
+	  	{% for i,j in classes %}
+	    <a class="dropdown-item" href="{% url 'class_detail' i %}">{{ j }}</a>
+	    <div class="dropdown-divider"></div>
+	    {% endfor %}
+	  </div>
+	</div>
+
+
+
+
+{% endblock %}

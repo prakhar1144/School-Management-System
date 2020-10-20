@@ -6,11 +6,12 @@
 	    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 	    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 	</form>
-	<div style="box-shadow: 0 0 10px grey; border-radius: 10px;">
-	<ol>
+
 	{% for i in object_list %}
-	   	<li><a href="{% url 'faculty_detail' pk=i.pk %}">{{i}}</a></li>
+	<div class='card'>
+		<h5 class="card-header" style="text-align: center;"><a href="{% url 'faculty_detail' pk=i.pk %}">{{i}}</a></h5>
+	   	<!-- <li><a href="{% url 'faculty_detail' pk=i.pk %}">{{i}}</a></li> -->
+	 </div>
+	 <br>
 	{% endfor %}
-	</ol>
-	</div>
 {% endblock %}

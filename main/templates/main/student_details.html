@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% block content %}
+	<p style="text-align: center;">Class Details</p>
+	{% for student in cdetail %}
+		<div class='card'>
+			<h5 class="card-header" style="text-align: center;">{{student.Name}}</h5>
+			<ul class="list-group list-group-flush">
+			    <li class="list-group-item">DOB : {{student.BirthDate}}</li>
+			    <li class="list-group-item">Contact : {{student.Parents_Contact_Number}}</li>
+			    <li class="list-group-item">Email : {{student.Email}}</li>
+	  		</ul>
+			
+		</div>
+		<br>
+	{% endfor %}
+{% endblock %}
+

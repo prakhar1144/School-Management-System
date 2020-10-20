@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+{% block content %}
+	<h1>Finance</h1>
+
+	<br>
+	<div class='card'>
+		<h5 class="card-header" style="text-align: center;"> Tution Fee </h5>
+	</div>
+
+	<br>
+
+	<div class="btn-group">
+	  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    Class
+	  </button>
+	  <div class="dropdown-menu">
+	  	{% for i,j in classes %}
+	    <a class="dropdown-item" href="{% url 'class_detail' i %}">{{ j }}</a>
+	    <div class="dropdown-divider"></div>
+	    {% endfor %}
+	  </div>
+	</div>
+
+	<br>
+
+	<div class='card'>
+		<h5 class="card-header" style="text-align: center;"> Payment </h5>
+	</div>
+
+	<br>
+
+	<div class="btn-group">
+	  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    Pay To
+	  </button>
+	  <div class="dropdown-menu">
+	    <a class="dropdown-item" href="#">Teachers</a>
+	    <div class="dropdown-divider"></div>
+	    <a class="dropdown-item" href="#">Staff</a>
+	  </div>
+	</div>
+
+	<br>
+
+	<div class='card'>
+		<h5 class="card-header" style="text-align: center;"> Others </h5>
+	</div>
+{% endblock %}
