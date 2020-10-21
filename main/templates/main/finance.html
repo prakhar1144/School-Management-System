@@ -3,6 +3,7 @@
 	<h1>Finance</h1>
 
 	<br>
+
 	<div class='card'>
 		<h5 class="card-header" style="text-align: center;"> Tution Fee </h5>
 	</div>
@@ -15,7 +16,7 @@
 	  </button>
 	  <div class="dropdown-menu">
 	  	{% for i,j in classes %}
-	    <a class="dropdown-item" href="{% url 'class_detail' i %}">{{ j }}</a>
+	    <a class="dropdown-item" href="{% url 'finance_detail' i %}">{{ j }}</a>
 	    <div class="dropdown-divider"></div>
 	    {% endfor %}
 	  </div>

@@ -28,3 +28,7 @@ class Finance(ListView):
 	queryset = Student_db.options
 	context_object_name = 'classes'
 	template_name = 'main/finance.html'
+
+def Finance_detail(request, i):
+	cdetail = list(Student_db.objects.filter(Class=i))
+	return render(request, 'main/finance_detail.html',{'cdetail':cdetail})
