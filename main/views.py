@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView, ListView, DetailView
 from .models import Faculty_db,Student_db 
 from django.shortcuts import render
+from datetime import date
 
 # Create your views here.
 class Home(TemplateView):
@@ -30,5 +31,21 @@ class Finance(ListView):
 	template_name = 'main/finance.html'
 
 def Finance_detail(request, i):
+	# Due_Student = []
 	cdetail = list(Student_db.objects.filter(Class=i))
-	return render(request, 'main/finance_detail.html',{'cdetail':cdetail})
+	# for j  in cdetail:
+	# 	due = (j.Fee.Paid_Till.year - j.Fee.Joined.year)*12 + (j.Fee.Paid_Till.month - j.Fee.Joined.month)
+	# 	if due > 0:
+	# 		Due_Student.append(j) 
+
+	return render(request, 'main/finance_detail.html',{'cdetail':cdetail,'Standard':i})
+
+def Due_detail(request, i):
+	Due_Student = []
+	cdetail = list(Student_db.objects.filter(Class=i))
+	for j  in cdetail:
+		due = (date.today().year -j.Fee.Paid_Till.year)*12 + (date.today().month - j.Fee.Paid_Till.month)
+		if due > 0:
+			Due_Student.append(j) 
+	
+	return render(request, 'main/temporary.html',{'Due_Student':Due_Student})

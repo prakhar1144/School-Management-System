@@ -1,6 +1,11 @@
 {% extends 'main/base.html' %}
 {% block content %}
 	<p style="text-align: center;">Class Details</p>
+	<form class="form-inline my-2 my-lg-0">
+	    <input class="form-control mr-sm-2" type="search" placeholder="Search by Name" aria-label="Search">
+	    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	</form>
+	<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="{% url 'Due_detail'  Standard %}">Fee Due</a></button>
 	{% for student in cdetail %}
 		<div class='card'>
 			<h5 class="card-header" style="text-align: center;">{{student.Name}}</h5>
@@ -12,6 +17,8 @@
 			
 		</div>
 		<br>
+		{{Due_Student}}
+		{{Standard}}
 	{% endfor %}
 {% endblock %}
 
