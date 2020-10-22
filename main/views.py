@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView, ListView, DetailView
-from .models import Faculty_db,Student_db 
+from .models import Faculty_db,Student_db,Staff_db 
 from django.shortcuts import render
 from datetime import date
 
@@ -49,3 +49,12 @@ def Due_detail(request, i):
 			Due_Student.append(j) 
 	
 	return render(request, 'main/temporary.html',{'Due_Student':Due_Student})
+
+class Staff(ListView):
+	model = Staff_db
+	template_name = 'main/staff.html'
+
+class Staff_detail(DetailView):
+	model = Staff_db
+	context_object_name = 'staff_name'
+	template_name = 'main/staff_detail.html'

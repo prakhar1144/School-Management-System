@@ -2,11 +2,11 @@
 {% block content %}
 	<p style="text-align: center;">Details</p>
 	<div class='card'>
-		<h5 class="card-header" style="text-align: center;">{{faculty_name.Name}}</h5>
+		<h5 class="card-header" style="text-align: center;">{{staff_name.Name}}</h5>
 		<ul class="list-group list-group-flush">
-		    <li class="list-group-item">Subject : {{faculty_name.Subject}}</li>
-		    <li class="list-group-item">Contact : {{faculty_name.Contact}}</li>
-		    <li class="list-group-item">Email : {{faculty_name.Email}}</li>
+		    <li class="list-group-item">Role : {{staff_name.Role}}</li>
+		    <li class="list-group-item">Contact : {{staff_name.Contact_Number}}</li>
+		    <li class="list-group-item">Paid Till : {{staff_name.Payment.Paid_Till}}</li>
   		</ul>
 		
 	</div>

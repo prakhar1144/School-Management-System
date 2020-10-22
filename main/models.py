@@ -44,3 +44,11 @@ class Student_db(models.Model):
 
 
 
+class Staff_db(models.Model):
+	Name = models.CharField(max_length=30)
+	Role = models.CharField(max_length=30)
+	Contact_Number = models.DecimalField(max_digits=10, decimal_places=0)
+	Payment = models.ForeignKey(Finance_db, on_delete=models.PROTECT, default=None)
+
+	def __str__(self):
+		return self.Name
