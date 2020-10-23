@@ -35,9 +35,9 @@
 	    Pay To
 	  </button>
 	  <div class="dropdown-menu">
-	    <a class="dropdown-item" href="#">Teachers</a>
+	    <a class="dropdown-item" href="{% url 'teacher_finance' %}">Teachers</a>
 	    <div class="dropdown-divider"></div>
-	    <a class="dropdown-item" href="#">Staff</a>
+	    <a class="dropdown-item" href="{% url 'staff_finance' %}">Staff</a>
 	  </div>
 	</div>
 
@@ -46,4 +46,19 @@
 	<div class='card'>
 		<h5 class="card-header" style="text-align: center;"> Others </h5>
 	</div>
+
+	<br>
+
+	<div class="btn-group">
+	  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    Options
+	  </button>
+	  <div class="dropdown-menu">
+	    <a class="dropdown-item" href="#">Electricity</a>
+	    <div class="dropdown-divider"></div>
+	    <a class="dropdown-item" href="#">Fuel</a>
+	  </div>
+	</div>
+
+
 {% endblock %}

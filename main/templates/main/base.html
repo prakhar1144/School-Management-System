@@ -25,21 +25,24 @@
 	      <li class="nav-item">
 	        <a class="nav-link" href="{% url 'staff' %}">Staff</a>
 	      </li>
+
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Finance
+	          Extras
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="{% url 'finance' %}">Tution Fee</a>
-	          <a class="dropdown-item" href="{% url 'finance' %}">Payment</a>
+	          <a class="dropdown-item" href="#">Tution Fee</a>
+	          <a class="dropdown-item" href="#">Payment</a>
 	          <!-- <div class="dropdown-divider"></div> -->
-	          <a class="dropdown-item" href="{% url 'finance' %}">Others</a>
+	          <a class="dropdown-item" href="#">Others</a>
 	        </div>
 	      </li>
+
 	      <li class="nav-item">
 	        <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
-	         <a class="nav-link" href="#">Result</a>
+	         <a class="nav-link" href="{% url 'finance' %}">Finance</a>
 	      </li>
+
 	    </ul>
 	    <form class="form-inline my-2 my-lg-0">
 	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

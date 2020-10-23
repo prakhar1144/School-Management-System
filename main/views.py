@@ -30,7 +30,7 @@ class Finance(ListView):
 	context_object_name = 'classes'
 	template_name = 'main/finance.html'
 
-def Finance_detail(request, i):
+def Student_finance(request, i):
 	# Due_Student = []
 	cdetail = list(Student_db.objects.filter(Class=i))
 	# for j  in cdetail:
@@ -38,7 +38,7 @@ def Finance_detail(request, i):
 	# 	if due > 0:
 	# 		Due_Student.append(j) 
 
-	return render(request, 'main/finance_detail.html',{'cdetail':cdetail,'Standard':i})
+	return render(request, 'main/student_finance.html',{'cdetail':cdetail,'Standard':i})
 
 def Due_detail(request, i):
 	Due_Student = []
@@ -48,7 +48,7 @@ def Due_detail(request, i):
 		if due > 0:
 			Due_Student.append(j) 
 	
-	return render(request, 'main/temporary.html',{'Due_Student':Due_Student})
+	return render(request, 'main/student_due.html',{'Due_Student':Due_Student})
 
 class Staff(ListView):
 	model = Staff_db
@@ -58,3 +58,13 @@ class Staff_detail(DetailView):
 	model = Staff_db
 	context_object_name = 'staff_name'
 	template_name = 'main/staff_detail.html'
+
+class Faculty_finance(ListView):
+	model = Faculty_db
+	context_object_name = 'faculty_name'
+	template_name = 'main/faculty_finance.html'
+
+class Staff_finance(ListView):
+	model = Staff_db
+	context_object_name = 'staff_name'
+	template_name = 'main/staff_finance.html'

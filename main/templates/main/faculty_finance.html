@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% block content %}
+	<p style="text-align: center;">Faculty Finance Details</p>
+	<form class="form-inline my-2 my-lg-0">
+	    <input class="form-control mr-sm-2" type="search" placeholder="Search by Name" aria-label="Search">
+	    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	</form>
+	{% for faculty in faculty_name %}
+		<div class='card'>
+			<h5 class="card-header" style="text-align: center;">{{faculty.Name}}</h5>
+			<ul class="list-group list-group-flush">
+			   <!--  <li class="list-group-item">Roll : {{student.Roll_Number}}</li> -->
+			    <li class="list-group-item">Contact : {{faculty.Contact}}</li>
+			    <li class="list-group-item">Paid Till : {{faculty.Payment.Paid_Till}}</li>
+	  		</ul>
+			
+		</div>
+		<br>
+
+	{% endfor %}
+{% endblock %}
