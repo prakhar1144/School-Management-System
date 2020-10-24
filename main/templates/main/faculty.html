@@ -1,15 +1,20 @@
 {% extends 'main/base.html' %}
 {% block content %}
 	
-	<p style="text-align: center;">Teachers</p>
-	<form class="form-inline my-2 my-lg-0">
-	    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-	    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	<div id='title'><h3>Faculty</h3>
+	</div>
+	<form id ='search'>
+		<div class="input-group mb-3">
+  			<input type="search" class="form-control" placeholder="Search by Name" aria-label="Search" aria-describedby="button-addon2">
+  			<div class="input-group-append">
+    		<button class="btn btn-outline-success" type="submit" id="button-addon2">Button</button>
+  			</div>
+		</div>
 	</form>
 
 	{% for i in object_list %}
-	<div class='card'>
-		<h5 class="card-header" style="text-align: center;"><a href="{% url 'faculty_detail' pk=i.pk %}">{{i}}</a></h5>
+	<div class='card bg-info'>
+		<h5 class="card-header" style="text-align: center;"><a href="{% url 'faculty_detail' pk=i.pk %}" style="color: inherit;">{{i}}</a></h5>
 	   	<!-- <li><a href="{% url 'faculty_detail' pk=i.pk %}">{{i}}</a></li> -->
 	 </div>
 	 <br>

@@ -1,24 +1,35 @@
 {% extends 'main/base.html' %}
 {% block content %}
-	<p style="text-align: center;">Class Details</p>
-	<form class="form-inline my-2 my-lg-0">
-	    <input class="form-control mr-sm-2" type="search" placeholder="Search by Name" aria-label="Search">
-	    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+	<div id='title'><h3>Class Finance</h3>
+	</div>
+	
+	<form id ='search'>
+		<div class="input-group mb-3">
+  			<input type="search" class="form-control" placeholder="Search by Name" aria-label="Search" aria-describedby="button-addon2">
+  			<div class="input-group-append">
+    		<button class="btn btn-outline-success" type="submit" id="button-addon2">Button</button>
+  			</div>
+		</div>
 	</form>
-	<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="{% url 'Due_detail'  Standard %}">Fee Due</a></button>
+
+	<div class='button_css'>
+	<a href="{% url 'Due_detail'  Standard %}"><button class="btn btn-outline-success" type="submit">Fee Due</button></a>
+	</div>
+
+	<br>
 	{% for student in cdetail %}
-		<div class='card'>
+		<div class='card bg-info'>
 			<h5 class="card-header" style="text-align: center;">{{student.Name}}</h5>
 			<ul class="list-group list-group-flush">
-			    <li class="list-group-item">Roll : {{student.Roll_Number}}</li>
-			    <li class="list-group-item">Contact : {{student.Parents_Contact_Number}}</li>
-			    <li class="list-group-item">Paid Till : {{student.Fee.Paid_Till}}</li>
+			    <li class="list-group-item"><b>Roll :</b> {{student.Roll_Number}}</li>
+			    <li class="list-group-item"><b>Contact :</b> {{student.Parents_Contact_Number}}</li>
+			    <li class="list-group-item"><b>Paid Till :</b> {{student.Fee.Paid_Till}}</li>
 	  		</ul>
 			
 		</div>
 		<br>
-		{{Due_Student}}
-		{{Standard}}
+
 	{% endfor %}
 {% endblock %}
 

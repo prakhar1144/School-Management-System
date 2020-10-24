@@ -1,13 +1,14 @@
 {% extends 'main/base.html' %}
 {% block content %}
-	<p style="text-align: center;">Details</p>
-	<div class='card'>
+	<div id='title'><h3>Details</h3>
+	</div>
+	<div class='card bg-info'>
 		<h5 class="card-header" style="text-align: center;">{{staff_name.Name}}</h5>
 		<ul class="list-group list-group-flush">
-		    <li class="list-group-item">Role : {{staff_name.Role}}</li>
-		    <li class="list-group-item">Contact : {{staff_name.Contact_Number}}</li>
-		    <li class="list-group-item">Paid Till : {{staff_name.Payment.Paid_Till}}</li>
-		    <li class="list-group-item">Joined : {{staff_name.Payment.Joined}}</li>
+		    <li class="list-group-item"><b>Role :</b> {{staff_name.Role}}</li>
+		    <li class="list-group-item"><b>Contact :</b> {{staff_name.Contact_Number}}</li>
+		    <li class="list-group-item"><b>Paid Till :</b> {{staff_name.Payment.Paid_Till}}</li>
+		    <li class="list-group-item"><b>Joined :</b> {{staff_name.Payment.Joined}}</li>
   		</ul>
 		
 	</div>

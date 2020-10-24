@@ -1,13 +1,23 @@
 {% extends 'main/base.html' %}
 {% block content %}
-	<p style="text-align: center;">Class Details</p>
+	<div id='title'><h3>Class Details</h3>
+	</div>
+	
+	<form id ='search'>
+		<div class="input-group mb-3">
+  			<input type="search" class="form-control" placeholder="Search by Name" aria-label="Search" aria-describedby="button-addon2">
+  			<div class="input-group-append">
+    		<button class="btn btn-outline-success" type="submit" id="button-addon2">Button</button>
+  			</div>
+		</div>
+	</form>
 	{% for student in cdetail %}
-		<div class='card'>
+		<div class='card bg-info'>
 			<h5 class="card-header" style="text-align: center;">{{student.Name}}</h5>
 			<ul class="list-group list-group-flush">
-			    <li class="list-group-item">DOB : {{student.BirthDate}}</li>
-			    <li class="list-group-item">Contact : {{student.Parents_Contact_Number}}</li>
-			    <li class="list-group-item">Email : {{student.Email}}</li>
+			    <li class="list-group-item"><b>DOB :</b> {{student.BirthDate}}</li>
+			    <li class="list-group-item"><b>Contact :</b> {{student.Parents_Contact_Number}}</li>
+			    <li class="list-group-item"><b>Email :</b> {{student.Email}}</li>
 	  		</ul>
 			
 		</div>
