@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<link rel="stylesheet" href="{% static 'css/base.css' %}">
 		<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
 
 	</head>
 	<body>
@@ -35,8 +36,8 @@
 	          Extras
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Tution Fee</a>
-	          <a class="dropdown-item" href="#">Payment</a>
+	          <a class="dropdown-item" href="#">Exams</a>
+	          <a class="dropdown-item" href="#">Syllabus</a>
 	          <!-- <div class="dropdown-divider"></div> -->
 	          <a class="dropdown-item" href="#">Others</a>
 	        </div>
@@ -46,12 +47,16 @@
 	        <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
 	         <a class="nav-link" href="{% url 'finance' %}">Finance</a>
 	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="http://127.0.0.1:8000/admin/">Admin</a>
+	      </li>
+
 
 	    </ul>
-	    <form class="form-inline my-2 my-lg-0">
+<!-- 	    <form class="form-inline my-2 my-lg-0">
 	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-	    </form>
+	    </form> -->
 	  </div>
 	</nav>
 	<div class='container' style="position: center;">
