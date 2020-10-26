@@ -4,9 +4,9 @@
 	<div id='title'><h3>Students</h3>
 	</div>
 	
-	<form id ='search'>
+	<form id ='search' action="{% url 'search_result_student' %}" method= 'get'>
 		<div class="input-group mb-3">
-  			<input type="search" class="form-control" placeholder="Search by Name" aria-label="Search" aria-describedby="button-addon2">
+  			<input type="search" class="form-control" placeholder="Search by Name" aria-label="Search" aria-describedby="button-addon2" name='q'>
   			<div class="input-group-append">
     		<button class="btn btn-outline-success" type="submit" id="button-addon2">Button</button>
   			</div>
@@ -14,7 +14,7 @@
 	</form>
 <!-- Example single danger button -->
 	<div class="button_css">
-	<div class="btn-group">
+	<div class="btn-group" style="box-shadow: 0 0 4px grey;">
 	  <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	    Class
 	  </button>

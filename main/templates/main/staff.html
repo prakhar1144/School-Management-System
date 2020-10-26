@@ -4,9 +4,9 @@
 	<div id='title'><h3>Staff</h3>
 	</div>
 	
-	<form id ='search'>
+	<form id ='search' action="{% url 'search_result_staff' %}" method= 'get'>
 		<div class="input-group mb-3">
-  			<input type="search" class="form-control" placeholder="Search by Name" aria-label="Search" aria-describedby="button-addon2">
+  			<input type="search" class="form-control" placeholder="Search by Name" aria-label="Search" aria-describedby="button-addon2" name='q'>
   			<div class="input-group-append">
     		<button class="btn btn-outline-success" type="submit" id="button-addon2">Button</button>
   			</div>
@@ -14,7 +14,7 @@
 	</form>
 
 	{% for i in object_list %}
-	<div class='card bg-info'>
+	<div class='card bg-info' style="filter: drop-shadow(0 0 6px grey);">
 		<h5 class="card-header" style="text-align: center;"><a href="{% url 'staff_detail' pk=i.pk %}" style="color: inherit;">{{i}}</a></h5>
 	   	<!-- <li><a href="{% url 'faculty_detail' pk=i.pk %}">{{i}}</a></li> -->
 	 </div>

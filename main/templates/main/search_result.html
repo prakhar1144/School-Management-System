@@ -1,0 +1,56 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+	<div id='title'><h3>Search Results</h3>
+	</div>
+	
+<!-- 	<form id ='search' action="{% url 'search_result_student' %}" method= 'get'>
+		<div class="input-group mb-3">
+  			<input type="search" class="form-control" placeholder="Search by Name" aria-label="Search" aria-describedby="button-addon2" name='q'>
+  			<div class="input-group-append">
+    		<button class="btn btn-outline-success" type="submit" id="button-addon2">Button</button>
+  			</div>
+		</div>
+	</form> -->
+
+	{% for student in Student_list %}
+		<div class='card bg-info'>
+			<h5 class="card-header" style="text-align: center;">{{student.Name}}</h5>
+			<ul class="list-group list-group-flush">
+			    <li class="list-group-item"><b>DOB :</b> {{student.BirthDate}}</li>
+			    <li class="list-group-item"><b>Contact :</b> {{student.Parents_Contact_Number}}</li>
+			    <li class="list-group-item"><b>Email :</b> {{student.Email}}</li>
+	  		</ul>
+			
+		</div>
+		<br>
+
+	{% endfor %}
+	
+	{% for faculty in Faculty_list %}
+		<div class='card bg-info'>
+			<h5 class="card-header" style="text-align: center;">{{faculty.Name}}</h5>
+			<ul class="list-group list-group-flush">
+			    <li class="list-group-item"><b>Subject :</b> {{faculty.Subject}}</li>
+			    <li class="list-group-item"><b>Contact :</b> {{faculty.Contact}}</li>
+			    <li class="list-group-item"><b>Email :</b> {{faculty.Email}}</li>
+	  		</ul>
+			
+		</div>
+		<br>
+	{% endfor %}
+
+	{% for staff in Staff_list %}
+		<div class='card bg-info'>
+			<h5 class="card-header" style="text-align: center;">{{staff.Name}}</h5>
+			<ul class="list-group list-group-flush">
+			    <li class="list-group-item"><b>Role :</b> {{staff.Role}}</li>
+			    <li class="list-group-item"><b>Contact :</b> {{staff.Contact_Number}}</li>
+			    <li class="list-group-item"><b>Paid Till :</b> {{staff.Payment.Paid_Till}}</li>
+			    <li class="list-group-item"><b>Joined :</b> {{staff.Payment.Joined}}</li>
+	  		</ul>
+			
+		</div>
+	{% endfor %}
+
+{% endblock %}

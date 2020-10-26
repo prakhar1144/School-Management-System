@@ -10,12 +10,15 @@
 	font-family: 'Grenze Gotisch', cursive;
 	text-align: center; 
 	font-size: 30px;
+	text-shadow: 2px 2px 5px grey;
+
 }
 
 #search {
 
 	margin-top: 20px;
 	margin-bottom: 30px; 
+	box-shadow: 0px 0px 4px grey;
 }
 
 
@@ -26,3 +29,6 @@
 
 }
 
+.card bg-info {
+	filter: drop-shadow(0 0 6px grey);
+}

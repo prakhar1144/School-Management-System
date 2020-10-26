@@ -68,3 +68,33 @@ class Staff_finance(ListView):
 	model = Staff_db
 	context_object_name = 'staff_name'
 	template_name = 'main/staff_finance.html'
+
+class SearchResultStudentView(ListView):
+	model = Student_db
+	template_name = 'main/search_result.html'
+	context_object_name = 'Student_list'
+
+	def get_queryset(self):
+		query = self.request.GET.get('q')
+		Student_list = Student_db.objects.filter(Name__icontains = query)
+		return Student_list
+
+class SearchResultFacultyView(ListView):
+	model = Faculty_db
+	template_name = 'main/search_result.html'
+	context_object_name = 'Faculty_list'
+
+	def get_queryset(self):
+		query = self.request.GET.get('q')
+		Faculty_list = Faculty_db.objects.filter(Name__icontains = query)
+		return Faculty_list
+
+class SearchResultStaffView(ListView):
+	model = Staff_db
+	template_name = 'main/search_result.html'
+	context_object_name = 'Staff_list'
+
+	def get_queryset(self):
+		query = self.request.GET.get('q')
+		Staff_list = Staff_db.objects.filter(Name__icontains = query)
+		return Staff_list
